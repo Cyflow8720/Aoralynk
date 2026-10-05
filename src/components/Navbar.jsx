@@ -1,0 +1,219 @@
+import { useState } from "react";
+import "../styles/Navbar.css";
+import logo from "../assets/logo.png";
+import { FaChevronDown } from "react-icons/fa";
+import { FiPhoneCall } from "react-icons/fi";
+
+function Navbar() {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setServicesOpen(false);
+  };
+
+  return (
+    <header className="navbar">
+
+      {/* Logo */}
+      <div className="logo">
+        <img src={logo} alt="One Care Children's Clinic" />
+      </div>
+
+
+      {/* Navigation */}
+      <nav className={menuOpen ? "mobile-nav-open" : ""}>
+
+        <ul className="nav-menu">
+
+          <li>
+            <a href="#" onClick={closeMenu}>
+              Home
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#" onClick={closeMenu}>
+              About us
+            </a>
+          </li>
+
+
+          {/* SERVICES DROPDOWN */}
+          <li className="services-dropdown">
+
+            <div className="services-link">
+
+              <a
+                href="#"
+                onClick={(e) => e.preventDefault()}
+              >
+                Services
+              </a>
+
+              <button
+  className={`dropdown-arrow ${servicesOpen ? "open" : ""}`}
+  onClick={() => setServicesOpen(!servicesOpen)}
+  aria-label="Open services menu"
+>
+  <FaChevronDown />
+</button>
+
+            </div>
+
+
+            {/* Dropdown */}
+            {servicesOpen && (
+              <ul className="services-menu">
+
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    General Pediatric Care
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Newborn & Infant Care
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Vaccination & Immunization
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Growth & Development Assessment
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Nutrition & Feeding Guidance
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Pediatric Diabetes Care
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Pediatric Rheumatology Care
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Respiratory & Allergy Care
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Neurology & Developmental Care
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Behavioral & Learning Concerns
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Adolescent Health
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Pediatric Skin Care
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Adolescent Health
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    * Preventive Child Health
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={closeMenu}>
+                    Post-Hospitalization Follow-up
+                  </a>
+                </li>
+
+              </ul>
+            )}
+
+          </li>
+
+
+          {/* Mobile Appointment */}
+          <li className="mobile-appointment">
+
+            <button className="btn">
+              Schedule appointment
+            </button>
+
+          </li>
+
+
+          <li>
+            <a href="#" onClick={closeMenu}>
+              Attachments
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#" onClick={closeMenu}>
+              Testimonials 
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      {/* Right Side */}
+      <div className="right-section">
+
+        <div className="phone">
+  <div className="phone-text">
+    <span>Call us</span>
+    <h4>+91 88793 33393</h4>
+  </div>
+
+  <FiPhoneCall className="phone-icon" />
+</div>
+
+        <button className="btn"onClick={() => {
+            window.location.href = "#appointment";
+          }}>
+          Appointment
+        </button>
+
+      </div>
+
+
+      {/* Mobile Menu */}
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
+
+    </header>
+  );
+}
+
+export default Navbar;

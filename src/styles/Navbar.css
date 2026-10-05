@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e5eaf2;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  width: 300px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-shrink: 0;
+  padding-left: 20px;
+}
+
+.logo img {
+  width: 350px;
+  max-width: 100%;
+  height: 70px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(18px, 2.5vw, 38px);
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+
+  color: #0e1930;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-menu a:hover {
+  color: #006AF8;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-dropdown {
+  position: relative;
+}
+
+.services-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+
+  color: #0b2e6d;
+
+  padding: 0;
+  cursor: pointer;
+}
+
+.dropdown-arrow svg {
+  width: 9px;
+  height: 9px;
+
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open svg {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   SERVICES DROPDOWN
+========================= */
+
+.services-menu {
+  position: absolute;
+
+  top: calc(100% + 15px);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 260px;
+  max-height: 500px;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 42, 75, 0.12);
+
+  z-index: 1001;
+}
+
+.services-menu li a {
+  display: block;
+
+  padding: 11px 18px;
+
+  color: #0b2e6d;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.services-menu li a:hover {
+  color: #006AF8;
+  background: #f5f9ff;
+  transform: translateX(4px);
+}
+
+/* =========================
+   RIGHT SECTION
+========================= */
+
+.right-section {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 0 25px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   PHONE
+========================= */
+
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+}
+
+.phone-text {
+  text-align: right;
+  line-height: 1.2;
+}
+
+.phone-text span {
+  display: block;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #64748b;
+
+  margin-bottom: 3px;
+}
+
+.phone-text h4 {
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #0b2c6b;
+}
+
+.phone-icon {
+  width: 25px;
+  height: 25px;
+
+  color: #006AF8;
+}
+
+/* =========================
+   APPOINTMENT BUTTON
+========================= */
+
+.btn {
+  border: none;
+  outline: none;
+
+  background: #006AF8;
+  color: #ffffff;
+
+  padding: 14px 24px;
+
+  min-width: 170px;
+
+  border-radius: 6px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  background: #0056D6;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 106, 248, 0.22);
+}
+
+.btn:active {
+  background: #004CBF;
+  transform: translateY(0);
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: transparent;
+  border: none;
+
+  color: #0b2e6d;
+
+  font-size: 27px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE APPOINTMENT
+========================= */
+
+.mobile-appointment {
+  display: none;
+}
+
+/* ==================================================
+   LARGE TABLET / SMALL DESKTOP
+   1200px and below
+================================================== */
+
+@media (max-width: 1200px) {
+
+  .logo {
+    width: 240px;
+    padding-left: 15px;
+  }
+
+  .logo img {
+    width: 220px;
+    height: 65px;
+  }
+
+  .nav-menu {
+    gap: 20px;
+  }
+
+  .nav-menu a {
+    font-size: 15px;
+  }
+
+  .right-section {
+    gap: 12px;
+    padding: 0 15px;
+  }
+
+  .phone-text span {
+    font-size: 12px;
+  }
+
+  .phone-text h4 {
+    font-size: 13px;
+  }
+
+  .phone-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btn {
+    min-width: 145px;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+}
+
+/* ==================================================
+   TABLET
+   1024px and below
+================================================== */
+
+@media (max-width: 1024px) {
+
+  .navbar {
+    min-height: 72px;
+  }
+
+  .logo {
+    width: 210px;
+    height: 72px;
+  }
+
+  .logo img {
+    width: 190px;
+    height: 60px;
+  }
+
+  .nav-menu {
+    gap: 14px;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+  }
+
+  .right-section {
+    padding: 0 10px;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .btn {
+    min-width: 135px;
+    padding: 12px 16px;
+  }
+}
+
+/* ==================================================
+   TABLET / MOBILE
+   900px and below
+================================================== */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 70px;
+    min-height: 70px;
+
+    padding: 0 20px;
+
+    position: relative;
+  }
+
+  .logo {
+    width: auto;
+    height: 70px;
+
+    padding-left: 0;
+  }
+
+  .logo img {
+    width: 190px;
+    height: 62px;
+  }
+
+  /* Hide desktop navigation */
+
+  nav {
+    display: none;
+  }
+
+  /* Mobile navigation */
+
+  nav.mobile-nav-open {
+    display: block;
+
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5eaf2;
+
+    box-shadow:
+      0 10px 25px rgba(15, 42, 75, 0.10);
+
+    z-index: 999;
+  }
+
+  nav.mobile-nav-open .nav-menu {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0;
+
+    padding: 10px 0 10px;
+  }
+
+  nav.mobile-nav-open .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.mobile-nav-open .nav-menu a {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    font-size: 16px;
+  }
+
+  nav.mobile-nav-open .nav-menu a:hover {
+    background: #f5f9ff;
+  }
+
+  /* Services */
+
+  nav.mobile-nav-open .services-link {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+
+    margin: auto;
+  }
+
+  nav.mobile-nav-open .services-menu {
+    position: static;
+
+    transform: none;
+
+    width: 92%;
+    max-height: none;
+
+    margin: 0 auto 10px;
+
+    background: #f5f9ff;
+
+    border: 1px solid #dce8f7;
+
+    border-radius: 8px;
+
+    box-shadow: none;
+  }
+
+  nav.mobile-nav-open .services-menu li a {
+    text-align: center;
+
+    padding: 11px;
+
+    font-size: 14px;
+  }
+
+  /* Hide desktop right section */
+
+  .right-section {
+    display: none;
+  }
+
+  /* Mobile appointment */
+
+  .mobile-appointment {
+    display: flex !important;
+
+    justify-content: center;
+
+    padding: 10px 20px 18px;
+  }
+
+  .mobile-appointment .btn {
+    width: 90%;
+
+    max-width: 300px;
+
+    min-width: 0;
+
+    padding: 13px 22px;
+  }
+
+  /* Hamburger */
+
+  .menu-toggle {
+    display: flex;
+
+    margin-left: auto;
+  }
+}
+
+/* ==================================================
+   MOBILE
+   600px and below
+================================================== */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    height: 68px;
+    min-height: 68px;
+
+    padding: 0 15px;
+  }
+
+  .logo {
+    height: 68px;
+  }
+
+  .logo img {
+    width: 170px;
+    height: 60px;
+  }
+
+  nav.mobile-nav-open {
+    top: 68px;
+  }
+
+  nav.mobile-nav-open .nav-menu a {
+    font-size: 15px;
+
+    padding: 13px 15px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+
+    font-size: 25px;
+  }
+}
+
+/* ==================================================
+   SMALL MOBILE
+   480px and below
+================================================== */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 64px;
+    min-height: 64px;
+
+    padding: 0 12px;
+  }
+
+  .logo {
+    height: 64px;
+  }
+
+  .logo img {
+    width: 150px;
+    height: 56px;
+  }
+
+  nav.mobile-nav-open {
+    top: 64px;
+  }
+
+  nav.mobile-nav-open .nav-menu {
+    padding-top: 5px;
+  }
+
+  nav.mobile-nav-open .nav-menu a {
+    font-size: 15px;
+    padding: 12px 15px;
+  }
+
+  nav.mobile-nav-open .services-menu {
+    width: 94%;
+  }
+
+  nav.mobile-nav-open .services-menu li a {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .mobile-appointment {
+    padding: 10px 15px 15px;
+  }
+
+  .mobile-appointment .btn {
+    width: 100%;
+    max-width: none;
+
+    padding: 12px 20px;
+
+    font-size: 14px;
+  }
+}
+
+/* ==================================================
+   VERY SMALL MOBILE
+   360px and below
+================================================== */
+
+@media (max-width: 360px) {
+
+  .logo img {
+    width: 135px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+
+    font-size: 23px;
+  }
+
+  nav.mobile-nav-open .nav-menu a {
+    font-size: 14px;
+  }
+}
